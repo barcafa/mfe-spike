@@ -33,7 +33,7 @@ module.exports = {
       name: "admin",
       filename: "remoteEntry.js",
       exposes: {
-          './Module': './apps/admin/src/app/app.module.ts',
+          './Module': './apps/admin/src/app/settings/settings.module.ts',
       },        
       shared: share({
         "@angular/core": {
