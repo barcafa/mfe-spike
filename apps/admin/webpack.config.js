@@ -11,7 +11,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "admin",
-    publicPath: "auto"
+    publicPath: ""
   },
   optimization: {
     // Only needed to bypass a temporary bug
@@ -27,11 +27,10 @@ module.exports = {
   },    
   plugins: [
     new ModuleFederationPlugin({
-
       library: { type: "module" },
 
       name: "admin",
-      filename: "remoteEntry.js",
+      filename: "admin/remoteEntry.js",
       exposes: {
           './Module': './apps/admin/src/app/settings/settings.module.ts',
       },        

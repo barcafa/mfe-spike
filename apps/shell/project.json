@@ -5,8 +5,10 @@
   "prefix": "mfe-spike",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "ngx-build-plus:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/shell",
         "index": "apps/shell/src/index.html",
@@ -14,8 +16,13 @@
         "polyfills": "apps/shell/src/polyfills.ts",
         "tsConfig": "apps/shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-        "styles": ["apps/shell/src/styles.scss"],
+        "assets": [
+          "apps/shell/src/favicon.ico",
+          "apps/shell/src/assets"
+        ],
+        "styles": [
+          "apps/shell/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -52,7 +59,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "ngx-build-plus:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "shell:build:production"
@@ -64,7 +71,7 @@
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
         "browserTarget": "shell:build"
       }
@@ -79,8 +86,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/shell"],
+      "executor": "ngx-build-plus:karma",
+      "outputs": [
+        "coverage/apps/shell"
+      ],
       "options": {
         "jestConfig": "apps/shell/jest.config.js",
         "passWithNoTests": true

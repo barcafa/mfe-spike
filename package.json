@@ -23,7 +23,9 @@
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
     "dep-graph": "nx dep-graph",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main"
+    "postinstall": "ngcc",
+    "postinstall:bak": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
+    "build:shell:externals": "ng build --extra-webpack-config apps/shell//webpack.externals.js --prod --project shell --single-bundle"
   },
   "private": true,
   "dependencies": {
@@ -36,8 +38,9 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "@nrwl/angular": "13.8.8",
+    "@nrwl/angular": "13.9.4",
     "concurrently": "^5.3.0",
+    "ngx-build-plus": "^13.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -51,12 +54,11 @@
     "@angular/compiler-cli": "~13.2.0",
     "@angular/language-service": "~13.2.0",
     "@nrwl/cli": "13.8.8",
-    "@nrwl/cypress": "13.8.8",
-    "@nrwl/eslint-plugin-nx": "13.8.8",
-    "@nrwl/jest": "13.8.8",
-    "@nrwl/linter": "13.8.8",
-    "@nrwl/tao": "13.8.8",
-    "@nrwl/workspace": "13.8.8",
+    "@nrwl/cypress": "13.9.4",
+    "@nrwl/eslint-plugin-nx": "13.9.4",
+    "@nrwl/jest": "13.9.4",
+    "@nrwl/linter": "13.9.4",
+    "@nrwl/workspace": "13.9.4",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
@@ -69,7 +71,8 @@
     "jest-preset-angular": "11.1.1",
     "prettier": "^2.5.1",
     "ts-jest": "27.0.5",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "nx": "13.9.4"
   },
   "resolutions": {
     "webpack": "5.0.0"

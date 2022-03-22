@@ -1,8 +1,7 @@
 {
-  "version": 2,
+  "version": 1,
   "projects": {
-    "shell": "apps/shell",
-    "admin": "apps/admin"
-    
+    "admin": "apps/admin",
+    "shell": "apps/shell"
   }
 }

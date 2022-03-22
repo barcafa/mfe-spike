@@ -2,12 +2,12 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
-const adminSettingsModule = () => 
-    loadRemoteModule({
-        type: 'module',
-        remoteEntry: '/admin/remoteEntry.js',
-        exposedModule: './Module'
-    }).then((m) => m.SettingsModule)
+// const adminSettingsModule = () => 
+//     loadRemoteModule({
+//         type: 'module',
+//         remoteEntry: '/admin/remoteEntry.js',
+//         exposedModule: './Module'
+//     }).then((m) => m.SettingsModule)
 
 export const APP_ROUTES: Routes = [
     {
@@ -28,8 +28,8 @@ export const APP_ROUTES: Routes = [
         path: 'admin',
         loadChildren: () =>
             loadRemoteModule({
-                remoteEntry: '/admin/remoteEntry.js',
-                remoteName: 'admin',
+                remoteEntry: 'http://localhost:3000/remoteEntry.js',
+                type: 'module',
                 exposedModule: './Module',
             }).then((m) => m.AdminPanelModule),
     },
